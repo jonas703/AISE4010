@@ -1,0 +1,9 @@
+name: 4010-DeepLearning
+dependencies:
+  - pandas
+  - python
+  - numpy
+  - ipykernel
+  - matplotlib
+  - scikit-learn
+  - tensorflow

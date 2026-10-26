@@ -1,9 +1,11 @@
 name: 4010-DeepLearning
+channels:
+  - conda-forge
 dependencies:
   - pandas
-  - python
+  - python=3.13
   - numpy
   - ipykernel
   - matplotlib
   - scikit-learn
-  - tensorflow
+  - pytorch

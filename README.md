@@ -31,18 +31,6 @@ conda activate 4010-DeepLearning
 
 Then open `AISE4010_Project_Group11.ipynb` and run all cells top to bottom (Restart & Run All). Models are built with PyTorch.
 
-### GPU (optional)
-
-For CUDA acceleration on an NVIDIA GPU, use the GPU environment instead (requirements are in the file's header comments):
-
-```
-conda env create -f 4010-DeepLearning-gpu.yaml
-conda activate 4010-DeepLearning-gpu
-python -m ipykernel install --user --name 4010-DeepLearning-gpu
-```
-
-Select the `4010-DeepLearning-gpu` kernel. The GPU check cell near the top of the notebook prints which device is used.
-
 ## Run order and outputs
 
-The notebook runs top to bottom: data audit → resampling/imputation → target and leakage analysis → chronological split and windows → baselines → MLP/CNN → grid search → final test comparison → smoke test. The grid search (72 trials) dominates the runtime: up to 100 epochs per trial with patience 30, but early stopping ends most trials after about 31 epochs. A full Restart & Run All took about 22 minutes on an NVIDIA RTX A2000; expect much longer on CPU. The best model and scaler state are saved to `models/stage1_best.pt`.
+The notebook runs top to bottom: data audit → resampling/imputation → target and leakage analysis → chronological split and windows → baselines → MLP/CNN → grid search → final test comparison → smoke test. The grid search (96 trials) dominates the runtime: up to 100 epochs per trial with patience 30, but early stopping ends most trials after about 31 epochs. A full Restart & Run All took about 22 minutes on an NVIDIA RTX A2000 with the earlier 72-trial grid (expect about a third longer now); expect much longer on CPU. The best model and scaler state are saved to `models/stage1_best.pt`.

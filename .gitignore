@@ -1,3 +1,7 @@
 # Raw dataset (download instructions in README.md)
 household_power_consumption.txt
 household_power_consumption.csv
+
+
+# Local GPU environment definition
+4010-DeepLearning-gpu.yaml
